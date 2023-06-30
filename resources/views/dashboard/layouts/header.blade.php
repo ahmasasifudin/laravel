@@ -12,15 +12,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link">Senin, 17 Agustus 1945</a>
+                        {{-- <a class="nav-link">Senin, 17 Agustus 1945</a> --}}
+                        <a class="nav-link">
+                            <?php 
+                            use Carbon\Carbon;
+                            // $now = Carbon::today();
+                            $now = Carbon::create(null, null, null, null, null, null, 'Asia/Bangkok');
+
+                            // echo $now->toDayDateTimeString();
+                            echo $now->format('l, jS F Y');
+                            
+                            ?>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="clock"></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Welcome back, Admin
-                        </a>
+                        Welcome back, {{ auth()->user()->name }}
+                        </a> 
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i><span data-feather="monitor"></span> My Dashboard</a>

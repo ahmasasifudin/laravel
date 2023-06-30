@@ -4,32 +4,37 @@
     <div class="card border-light my-4">
         <div class="card-header h4 fw-bold" style="text-align: center">QC LANE</div>
     </div>
-    <form action="" class="mb-5 border">
+    <form method="POST" action="/dashboard/qc-lane" enctype="multipart/form-data" class="mb-5 border" autocomplete="off">
+    @csrf
         <div class="row my-3 mx-3">
             <div class="col-md-3">
-            <label for="vinMobil">VIN MOBIL</label>
-                <select class="form-select">
+                <label for="vinMobil">VIN MOBIL</label>
+                <select id="kodeVin" class="form-select" aria-label="Default">
                     <option selected>Search Kode VIN</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($qc_ins as $qcin)
+                        @if (old('kode_vin') == $qcin->id)
+                            <option value="{{ $qcin->id }}" selected>{{ $qcin->kode_vin }}</option>
+                        @else
+                            <option value="{{ $qcin->id }}">{{ $qcin->kode_vin }}</option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="row my-3 mx-3">
             <div>
-            <label for="model">MODEL</label>
-            <input type="text" class="form-control" placeholder="Model">
+                <label for="model">MODEL</label>
+                <input type="text" class="form-control" placeholder="Model" id="model" name="model">
             </div>
         </div>
         <div class="row my-3 mx-3">
             <div class="col-md-3">
             <label for="model">TGL INSTALL</label>
-            <input type="text" class="form-control" placeholder="Tanggal Install">
+            <input type="date" class="form-control" placeholder="Tanggal Install" id="tgl_install" name="tgl_install">
             </div>
             <div class="col-md-3 offset-md-3">
             <label for="model">WAKTU IN</label>
-            <input type="text" class="form-control" placeholder="Waktu IN">
+            <input type="time" class="form-control" placeholder="Waktu IN" id="waktu_in" name="waktu_in">
             </div>
         </div>
         <div class="row mx-3">
@@ -105,4 +110,25 @@
             <button type="submit" class="btn btn-primary mb-3">Submit</button>
         </div>
     </form>
+
+    <script>
+        // $(document).ready(function(){
+        //     $("#kodeVin").select2({
+        //         placeholder:'Search Kode VIN',
+        //         ajax: {
+        //             url: "{{ route('vin.index') }}",
+        //             processResults: function({data}){
+        //                 return {
+        //                     result: $.map(data, function(item){
+        //                         return {
+        //                             id: item.id,
+        //                             text: item.kode_vin
+        //                         }
+        //                     })
+        //                 }
+        //             }
+        //         }
+        //     });
+        // });
+    </script>
 @endsection
