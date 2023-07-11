@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\LoadingZoneController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QcinController;
 use App\Http\Controllers\QclaneController;
+use App\Http\Controllers\RtRwController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,16 +30,17 @@ Route::get('/dashboard', function() {
 
 Route::resource('/dashboard/qc-in', QcinController::class)->middleware('auth');
 
-Route::resource('/dashboard/qc-lane', QclaneController::class)->middleware('auth');
-Route::get('kodeVin', [QclaneController::class, 'vin'])->name('vin.index');
+Route::get('/dashboard/qc-lane', [QclaneController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/qc-lane/model/{id}', [QclaneController::class, 'getData'])->middleware('auth');
+Route::post('/dashboard/qc-lane', [QclaneController::class, 'tambah'])->middleware('auth');
 
-Route::get('/dashboard/rtrw', function() {
-    return view('dashboard.rtrw.index');
-})->middleware('auth');
+Route::get('/dashboard/rtrw', [RtRwController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/rtrw/model/{id}', [RtRwController::class, 'getData'])->middleware('auth');
+Route::post('/dashboard/rtrw', [RtRwController::class, 'tambah'])->middleware('auth');
 
-Route::get('/dashboard/loading-zone', function() {
-    return view('dashboard.loading-zone.index');
-})->middleware('auth');
+Route::get('/dashboard/loading-zone', [LoadingZoneController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/loading-zone/model/{id}', [LoadingZoneController::class, 'getData'])->middleware('auth');
+Route::post('/dashboard/loading-zone', [LoadingZoneController::class, 'tambah'])->middleware('auth');
 
 Route::get('/dashboard/laporan-divisi', function() {
     return view('dashboard.laporan.laporan-divisi.index');

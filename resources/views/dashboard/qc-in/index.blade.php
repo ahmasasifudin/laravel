@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select class="form-select form-select-sm js-example-basic-single" name="unit">
+                            <select class="form-select form-select-sm js-example-basic-single" name="unit" id="unit">
                                 <option selected>Unit</option>
                                 <option value="OK">OK</option>
                                 <option value="NG">NG</option>
@@ -129,6 +129,15 @@
             oFReader.onload = function(oFRevent) {
                 imgPreview.src = oFRevent.target.result;
             }
-        }
+        };
+
+        $(document).ready(function() {
+            $('#unit').select2( {
+                theme: "bootstrap-5",
+                width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%':'style',
+                placeholder: $(this).data('placeholder'),
+            });
+        });
+
     </script>
 @endsection

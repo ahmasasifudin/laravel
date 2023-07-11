@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QcLane extends Model
+class RtRw extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function qcin()
+    public function qclane()
     {
-        return $this->belongsTo(QcIn::class);
+        return $this->belongsTo(QcLane::class);
     }
 
-    public function rtrw()
+    public function loadingzone()
     {
-        return $this->belongsTo(RtRw::class);
+        return $this->belongsTo(LoadingZone::class);
     }
 }
