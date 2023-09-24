@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.main')
 
+@section('title','DASHBOARD')
+
 @section('container')
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
         <h1 class="h2 fw-bold">WELCOME TO</h1>

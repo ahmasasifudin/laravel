@@ -9,9 +9,12 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('/login', [
-            'title' => 'Login',
-        ]);
+        return view('login');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard.index');
     }
 
     public function authenticate(Request $request)
@@ -24,7 +27,7 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         }
 
         return back()->with('loginError', 'Login failed!');
@@ -52,6 +55,6 @@ class LoginController extends Controller
         
         request()->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

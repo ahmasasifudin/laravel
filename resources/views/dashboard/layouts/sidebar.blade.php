@@ -14,39 +14,38 @@
     <div class="position-sticky pt-3 sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
+          <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">
             <span data-feather="monitor" class="align-text-bottom"></span>
             DASHBOARD
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/qc-in*') ? 'active' : '' }}" href="/dashboard/qc-in">
-            <span data-feather="user" class="align-text-bottom"></span>
-            QC IN
-          </a>
-        </li>
+        @if (Auth::user()->role == 'super' || Auth::user()->role == 'admin_in' || Auth::user()->role == 'user_in')
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/qc-in*') ? 'active' : '' }}" href="/dashboard/qc-in">
+              <span data-feather="user" class="align-text-bottom"></span>
+              QC IN
+            </a>
+          </li>
+        @endif
         
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/qc-lane*') ? 'active' : '' }}" href="/dashboard/qc-lane">
-            <span data-feather="users" class="align-text-bottom"></span>
-            QC LANE
-          </a>
-        </li>
+        @if (Auth::user()->role == 'super' || Auth::user()->role == 'admin_lane' || Auth::user()->role == 'user_lane')
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/qc-lane*') ? 'active' : '' }}" href="/dashboard/qc-lane">
+              <span data-feather="users" class="align-text-bottom"></span>
+              QC LANE
+            </a>
+          </li>
+        @endif
 
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/rtrw*') ? 'active' : '' }}" href="/dashboard/rtrw">
-            <span data-feather="pocket" class="align-text-bottom"></span>
-            RTRW
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/loading-zone*') ? 'active' : '' }}" href="/dashboard/loading-zone">
-            <span data-feather="folder-plus" class="align-text-bottom"></span>
-            LOADING ZONE
-          </a>
-        </li>
+        @if (Auth::user()->role == 'super' || Auth::user()->role == 'admin_rtrw' || Auth::user()->role == 'user_rtrw')
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/rtrw*') ? 'active' : '' }}" href="/dashboard/rtrw">
+              <span data-feather="pocket" class="align-text-bottom"></span>
+              RTRW
+            </a>
+          </li>
+        @endif
 
         <li class="nav-item">
           <a class="nav-link dropdown-btn">
@@ -69,30 +68,7 @@
               </a>
           </div>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/setting*') ? 'active' : '' }}" href="/dashboard/setting">
-            <span data-feather="settings" class="align-text-bottom"></span>
-            SETTING
-          </a>
-        </li>
       </ul>
-
-      @can('admin')
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Administrator</span>
-        </h6>
-
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
-              <span data-feather="grid" class="align-text-bottom"></span>
-              Categories Post
-            </a>
-          </li>
-        </ul>
-      @endcan
-
     </div>
 </nav>
 

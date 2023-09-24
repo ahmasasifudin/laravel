@@ -1,8 +1,10 @@
 @extends('dashboard.layouts.main')
 
+@section('title','Laporan Divisi')
+
 @section('container')
     <div class="card border-light my-4">
-        <div class="card-header h4 fw-bold" style="text-align: center">LAPORAN</div>
+        <div class="card-header h4 fw-bold" style="text-align: center">LAPORAN DIVISI</div>
     </div>
     
     <div class="row">
@@ -37,18 +39,6 @@
                       <h1 class="card-title" style="text-align: center">
                           <i data-feather="pocket" style="width:75px; height: 75px"></i>
                           RTRW
-                      </h1>
-                  </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-6 mt-3">
-            <a href="/dashboard/laporan-divisi/loading-zone" style="text-decoration: none">
-                <div class="card">
-                  <div class="card-body bg-light">
-                      <h1 class="card-title" style="text-align: center">
-                          <i data-feather="folder-plus" style="width:75px; height: 75px"></i>
-                          LOADING ZONE
                       </h1>
                   </div>
                 </div>

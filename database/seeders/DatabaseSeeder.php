@@ -16,9 +16,52 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin')
+            'name' => 'Super Admin',
+            'email' => 'super@gmail.com',
+            'password' => bcrypt('super'),
+            'role' => 'super'
+        ]);
+        
+        User::create([
+            'name' => 'Admin QC IN',
+            'email' => 'adminin@gmail.com',
+            'password' => bcrypt('admin'),
+            'role' => 'admin_in'
+        ]);
+
+        User::create([
+            'name' => 'User QC IN',
+            'email' => 'userin@gmail.com',
+            'password' => bcrypt('user'),
+            'role' => 'user_in'
+        ]);
+
+        User::create([
+            'name' => 'Admin QC Lane',
+            'email' => 'adminlane@gmail.com',
+            'password' => bcrypt('admin'),
+            'role' => 'admin_lane'
+        ]);
+
+        User::create([
+            'name' => 'User QC Lane',
+            'email' => 'userlane@gmail.com',
+            'password' => bcrypt('user'),
+            'role' => 'user_lane'
+        ]);
+
+        User::create([
+            'name' => 'Admin RTRW',
+            'email' => 'adminrtrw@gmail.com',
+            'password' => bcrypt('admin'),
+            'role' => 'admin_rtrw'
+        ]);
+
+        User::create([
+            'name' => 'User RTRW',
+            'email' => 'userrtrw@gmail.com',
+            'password' => bcrypt('user'),
+            'role' => 'user_rtrw'
         ]);
     }
 }

@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.main')
 
+@section('title','RTRW')
+
 @section('container')
     <div class="card border-light my-4">
         <div class="card-header h4 fw-bold" style="text-align: center">RTRW</div>

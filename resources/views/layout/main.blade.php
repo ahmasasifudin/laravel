@@ -13,7 +13,7 @@
     {{-- Style css --}}
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>QC Hyundai | {{ $title }}</title>
+    <title>QC Hyundai | @yield('title')</title>
   </head>
   <body>
     {{-- @include('partial.navbar') --}}

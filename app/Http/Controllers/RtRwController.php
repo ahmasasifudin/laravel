@@ -10,7 +10,19 @@ class RtRwController extends Controller
 {
     public function index()
     {
-        $qc_lanes = QcLane::all();
+        // $qc_lanes = QcLane::all();
+        $qc_lanes = QcLane::leftJoin('rt_rws', 'qc_lanes.kode_vin', '=', 'rt_rws.kode_vin')
+            ->where(function ($query) {
+                $query->whereNull('rt_rws.kode_vin')
+                    ->orWhere(function ($query) {
+                        $query->where(function ($query) {
+                            $query->where('rt_rws.waktu_out', '=', null);
+                        });
+                    });
+                })
+            ->select('qc_lanes.kode_vin')
+            ->get();
+
         return view('dashboard.rtrw.index', compact('qc_lanes'));
     }
     
@@ -36,7 +48,7 @@ class RtRwController extends Controller
             'qtrl_rtrw' => $request->qtrl_rtrw,
             'bdr_rtrw' => $request->bdr_rtrw,
             'pic' => $request->pic,
-            'team' => $request->team,
+            'team_rtrw' => $request->team,
             'waktu_out' => $request->waktu_out
         ]);
         $data->save();

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rt_rws', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kode_vin')->unique();
+            $table->string('kode_vin')->unique();
             $table->string('model');
             $table->string('tgl_install');
             $table->string('waktu_in');
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('qtrl_rtrw');
             $table->string('bdr_rtrw');
             $table->string('pic');
-            $table->string('team');
+            $table->string('team_rtrw');
             $table->string('waktu_out');
             $table->timestamps();
         });

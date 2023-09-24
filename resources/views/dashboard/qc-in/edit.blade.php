@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.main')
 
-@section('title','QC IN')
+@section('title','Edit QC IN')
 
 @section('container')
     <div class="card border-light my-4">

@@ -1,5 +1,7 @@
 @extends('layout.main')
 
+@section('title','Login')
+
 @section('container')
 
 <div class="row justify-content-center">
@@ -22,7 +24,7 @@
                 </div>
             @endif
             
-            <form action="/" method="POST">
+            <form action="/login" method="POST">
                 @csrf
             
                     <div class="form-floating">
