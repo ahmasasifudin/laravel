@@ -63,11 +63,12 @@
             <label for="model">KONDISI KACA</label>
                 <table class="table table-bordered">
                     <tr>
-                        <th class="table-light col-md-3" style="text-align: center">PANEL KF</th>
+                        <th class="table-light col-md-2" style="text-align: center">PANEL KF</th>
                         <th class="table-light col-md-3" style="text-align: center">QC IN</th>
                         <th class="table-light" style="text-align: center">Code Installer</th>
-                        <th class="table-light" style="text-align: center">PIC Check</th>
+                        <th class="table-light" style="text-align: center">PIC Check QC LANE</th>
                         <th class="table-light" style="text-align: center">RTRW Check</th>
+                        <th class="table-light" style="text-align: center">PIC Check QC RTRW</th>
                     </tr>
                     <tr>
                         <td style="text-align: center">WSD</td>
@@ -81,6 +82,7 @@
                             <input type="text" id="wsd_pic" name="wsd_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="wsd_rtrw" name="wsd_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="wsd_pic_rtrw" name="wsd_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">FR</td>
@@ -91,6 +93,7 @@
                             <input type="text" id="fr_pic" name="fr_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="fr_rtrw" name="fr_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="fr_pic_rtrw" name="fr_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">FL</td>
@@ -101,6 +104,7 @@
                             <input type="text" id="fl_pic" name="fl_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="fl_rtrw" name="fl_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="fl_pic_rtrw" name="fl_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">RR</td>
@@ -111,6 +115,7 @@
                             <input type="text" id="rr_pic" name="rr_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="rr_rtrw" name="rr_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="rr_pic_rtrw" name="rr_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">RL</td>
@@ -121,6 +126,7 @@
                             <input type="text" id="rl_pic" name="rl_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="rl_rtrw" name="rl_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="rl_pic_rtrw" name="rl_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">QTR R</td>
@@ -131,6 +137,7 @@
                             <input type="text" id="qtrr_pic" name="qtrr_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="qtrr_rtrw" name="qtrr_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="qtrr_pic_rtrw" name="qtrr_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">QTR L</td>
@@ -141,6 +148,7 @@
                             <input type="text" id="qtrl_pic" name="qtrl_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="qtrl_rtrw" name="qtrl_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="qtrl_pic_rtrw" name="qtrl_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                     <tr>
                         <td style="text-align: center">BDR</td>
@@ -151,6 +159,7 @@
                             <input type="text" id="bdr_pic" name="bdr_pic" class="form-control form-control-sm" disabled readonly>
                         </td>
                         <td><input type="text" id="bdr_rtrw" name="bdr_rtrw" class="form-control form-control-sm"></td>
+                        <td><input type="text" id="bdr_pic_rtrw" name="bdr_pic_rtrw" class="form-control form-control-sm"></td>
                     </tr>
                 </table>
             </div>
@@ -231,6 +240,7 @@
                             $('#qtrl_pic').val(data[0].qtrl_pic);
                             $('#bdr_code').val(data[0].bdr_code);
                             $('#bdr_pic').val(data[0].bdr_pic);
+                            $('#team').val(data[0].team_lane);
                         }
                     });
                 } else {
@@ -252,6 +262,7 @@
                     $('#qtrl_pic').empty();
                     $('#bdr_code').empty();
                     $('#bdr_pic').empty();
+                    $('#team').empty();
                 }
             });
         });

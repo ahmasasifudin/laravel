@@ -22,6 +22,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Tanggal Install</th>
+                        <th>Image VIN</th>
                         <th>Kode VIN</th>
                         <th>Model</th>
                         <th>Unit</th>
@@ -41,6 +42,13 @@
             
                             <td>{{ $formattedDate }}</td>
 
+                            <td style="text-align: center">
+                                @if($item->image)
+                                    <img src="{{ asset('images-qcin/' . $item->image) }}" alt="Image" style="max-width: 150px; max-height: 150px;">
+                                @else
+                                    No Image
+                                @endif
+                            </td>
                             <td>{{ $item->kode_vin }}</td>
                             <td>{{ $item->model }}</td>
                             <td>{{ $item->unit }}</td>

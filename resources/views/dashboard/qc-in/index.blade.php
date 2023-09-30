@@ -107,9 +107,9 @@
         </div>
         <div class="row mb-4 mx-3">
             <div class="col-md-3">
-                <label for="pic">NAMA PIC</label>
-                <input type="text" class="form-control @error('pic') is-invalid @enderror" id="pic" name="pic" placeholder="Nama PIC" required> {{ old('pic') }}
-                @error('pic')
+                <label for="pic_in">NAMA PIC</label>
+                <input type="text" class="form-control @error('pic_in') is-invalid @enderror" id="pic_in" name="pic_in" placeholder="Nama PIC" required> {{ old('pic_in') }}
+                @error('pic_in')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

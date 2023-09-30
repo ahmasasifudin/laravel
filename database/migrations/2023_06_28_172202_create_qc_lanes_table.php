@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('qtrl_pic')->nullable();
             $table->string('bdr_code');
             $table->string('bdr_pic')->nullable();
-            $table->string('pic')->nullable();
+            $table->string('pic_lane')->nullable();
             $table->string('team_lane');
             $table->string('waktu_out')->nullable();
             $table->timestamps();

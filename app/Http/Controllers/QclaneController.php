@@ -54,7 +54,7 @@ class QclaneController extends Controller
                 'qtrr_pic' => $request->qtrr_pic,
                 'qtrl_pic' => $request->qtrl_pic,
                 'bdr_pic' => $request->bdr_pic,
-                'pic' => $request->pic,
+                'pic_lane' => $request->pic,
                 'waktu_out' => $request->waktu_out,
 
                 'model' => $request->model,
@@ -98,7 +98,7 @@ class QclaneController extends Controller
                 'qtrr_pic' => $request->qtrr_pic,
                 'qtrl_pic' => $request->qtrl_pic,
                 'bdr_pic' => $request->bdr_pic,
-                'pic' => $request->pic,
+                'pic_lane' => $request->pic,
                 'waktu_out' => $request->waktu_out,
             ]);
             

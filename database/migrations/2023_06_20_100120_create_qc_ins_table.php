@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('tgl_install');
             $table->string('unit');
             $table->text('keterangan');
-            $table->string('pic');
+            $table->string('pic_in');
             $table->timestamps();
         });
     }

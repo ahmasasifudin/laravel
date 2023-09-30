@@ -47,7 +47,15 @@ class RtRwController extends Controller
             'qtrr_rtrw' => $request->qtrr_rtrw,
             'qtrl_rtrw' => $request->qtrl_rtrw,
             'bdr_rtrw' => $request->bdr_rtrw,
-            'pic' => $request->pic,
+            'wsd_pic_rtrw' => $request->wsd_pic_rtrw,
+            'fr_pic_rtrw' => $request->fr_pic_rtrw,
+            'fl_pic_rtrw' => $request->fl_pic_rtrw,
+            'rr_pic_rtrw' => $request->rr_pic_rtrw,
+            'rl_pic_rtrw' => $request->rl_pic_rtrw,
+            'qtrr_pic_rtrw' => $request->qtrr_pic_rtrw,
+            'qtrl_pic_rtrw' => $request->qtrl_pic_rtrw,
+            'bdr_pic_rtrw' => $request->bdr_pic_rtrw,
+            'pic_rtrw' => $request->pic,
             'team_rtrw' => $request->team,
             'waktu_out' => $request->waktu_out
         ]);

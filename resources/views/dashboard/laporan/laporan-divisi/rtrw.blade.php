@@ -37,14 +37,14 @@
                             <td rowspan="2">{{ $item->kode_vin }}</td>
                             <td>{{ $item->model }}</td>
                             <td>{{ $item->team_rtrw }}</td>
-                            <td>{{ $item->wsd_rtrw }}</td>
-                            <td>{{ $item->fr_rtrw }}</td>
-                            <td>{{ $item->fl_rtrw }}</td>
-                            <td>{{ $item->rr_rtrw }}</td>
-                            <td>{{ $item->rl_rtrw }}</td>
-                            <td>{{ $item->qtrr_rtrw }}</td>
-                            <td>{{ $item->qtrl_rtrw }}</td>
-                            <td>{{ $item->bdr_rtrw }}</td>
+                            <td>{{ $item->wsd_pic_rtrw }}</td>
+                            <td>{{ $item->fr_pic_rtrw }}</td>
+                            <td>{{ $item->fl_pic_rtrw }}</td>
+                            <td>{{ $item->rr_pic_rtrw }}</td>
+                            <td>{{ $item->rl_pic_rtrw }}</td>
+                            <td>{{ $item->qtrr_pic_rtrw }}</td>
+                            <td>{{ $item->qtrl_pic_rtrw }}</td>
+                            <td>{{ $item->bdr_pic_rtrw }}</td>
 
                             <td rowspan="2">
                                 <div class="d-flex justify-content-center">
@@ -57,14 +57,14 @@
                         </tr>
                         <tr>
                             <td colspan="2">CODE INSTALLER</td>
-                            <td>{{ $item->wsd_code }}</td>
-                            <td>{{ $item->fr_code }}</td>
-                            <td>{{ $item->fl_code }}</td>
-                            <td>{{ $item->rr_code }}</td>
-                            <td>{{ $item->rl_code }}</td>
-                            <td>{{ $item->qtrr_code }}</td>
-                            <td>{{ $item->qtrl_code }}</td>
-                            <td>{{ $item->bdr_code }}</td>
+                            <td>{{ $item->wsd_rtrw }}</td>
+                            <td>{{ $item->fr_rtrw }}</td>
+                            <td>{{ $item->fl_rtrw }}</td>
+                            <td>{{ $item->rr_rtrw }}</td>
+                            <td>{{ $item->rl_rtrw }}</td>
+                            <td>{{ $item->qtrr_rtrw }}</td>
+                            <td>{{ $item->qtrl_rtrw }}</td>
+                            <td>{{ $item->bdr_rtrw }}</td>
                         </tr>
                     @endforeach
                 </tbody>
